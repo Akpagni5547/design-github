@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:food_apps/screens/screen2.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoriesFood {
   final String urlImage;
@@ -72,7 +73,7 @@ class HomeScreenOne extends StatelessWidget {
         ],
       ),
       body: Container(
-        padding: const EdgeInsets.only(top: 30),
+        padding: const EdgeInsets.only(top: 25).r,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
               colors: [Color(0xffffecd8), Colors.white],
@@ -81,7 +82,7 @@ class HomeScreenOne extends StatelessWidget {
               stops: [0.2, 0.3]),
         ),
         child: ListView(
-          padding: const EdgeInsets.only(left: 15, top: 30),
+          padding: const EdgeInsets.only(left: 15, top: 30).r,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,30 +90,31 @@ class HomeScreenOne extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'Delivery',
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 15),
+                          fontSize: 15.sp),
                     ),
-                    const SizedBox(
-                      height: 3,
+                    SizedBox(
+                      height: 1.h,
                     ),
                     Row(
-                      children: const [
+                      children: [
                         Text(
                           "Bacangan, Sambit!",
-                          style: TextStyle(color: Colors.black, fontSize: 15),
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 15.sp),
                         ),
-                        Icon(Icons.arrow_drop_down)
+                        const Icon(Icons.arrow_drop_down)
                       ],
                     )
                   ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(right: 15),
-                  child: CircleAvatar(
+                Padding(
+                  padding: const EdgeInsets.only(right: 15).r,
+                  child: const CircleAvatar(
                     backgroundColor: Colors.orangeAccent,
                     // backgroundImage: Image.asset(
                     //   'assets/images/food.png',
@@ -126,7 +128,7 @@ class HomeScreenOne extends StatelessWidget {
               height: 30,
             ),
             Container(
-              height: MediaQuery.of(context).size.height / 16,
+              height: 50.h,
               child: TextFormField(
                 cursorColor: const Color(0xffe5d5c2),
                 decoration: const InputDecoration(
@@ -142,27 +144,28 @@ class HomeScreenOne extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 50,
+            SizedBox(
+              height: 30.h,
             ),
             Row(
-              children: const [
+              children: [
                 Text(
                   'Choose Category',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
                 )
               ],
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
             Container(
-              height: MediaQuery.of(context).size.height / 8,
+              height: 75.h,
               child: ListView.builder(
                   itemCount: categoriesFoods.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: ((context, index) => Container(
-                        margin: const EdgeInsets.only(right: 35),
+                        margin: const EdgeInsets.only(right: 30).w,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -179,51 +182,55 @@ class HomeScreenOne extends StatelessWidget {
                               child: Image.asset(
                                 'assets/images/food.png',
                                 fit: BoxFit.cover,
-                                height: MediaQuery.of(context).size.height / 13,
+                                height: 50.h,
                               ),
                             ),
-                            const SizedBox(
-                              height: 6,
+                            SizedBox(
+                              height: 4.h,
                             ),
-                            Text(categoriesFoods[index].title)
+                            Text(
+                              categoriesFoods[index].title,
+                              style: TextStyle(fontSize: 12.sp),
+                            )
                           ],
                         ),
                       ))),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 17.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
                   'Main Course',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 8).w,
                   child: Text(
                     'See all',
                     style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xffdb684d)),
+                        color: const Color(0xffdb684d)),
                   ),
                 )
               ],
             ),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 12.h,
             ),
             Container(
-              height: MediaQuery.of(context).size.height / 2,
+              height: 0.5.sh,
               child: GridView.builder(
-                padding: const EdgeInsets.only(right: 15),
+                padding: const EdgeInsets.only(right: 12).w,
                 itemCount: courses.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 15,
+                    crossAxisSpacing: 13.w,
+                    mainAxisSpacing: 13.h,
                     childAspectRatio: 0.9),
                 itemBuilder: ((context, index) => Container(
                       decoration: BoxDecoration(
@@ -239,8 +246,9 @@ class HomeScreenOne extends StatelessWidget {
                               alignment: Alignment.centerLeft,
                               child: Text(
                                 courses[index].title,
-                                style: const TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),

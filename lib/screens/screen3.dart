@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});
@@ -102,9 +103,10 @@ class DetailScreen extends StatelessWidget {
                 Container(
                   // color: Colors.blue,
                   width: MediaQuery.of(context).size.width / 1.4,
-                  child: const Text(
+                  child: Text(
                     'Grilled Beef Steak with Sauce ABC',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 23.sp),
                   ),
                 ),
                 const SizedBox(
@@ -178,7 +180,7 @@ class DetailScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Container(
                                 // height: 100,
                                 width: MediaQuery.of(context).size.width / 7,
